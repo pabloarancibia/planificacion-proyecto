@@ -63,11 +63,11 @@
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 1.0      & Creación del documento                                          & 27/06/2020 \\ \hline
-1.1      &                                                                 & dd/mm/aaaa \\ \hline
-1.2      & Otro ejemplo \newline
-		   Con texto partido \newline
-		   En varias líneas \newline
-		   A propósito                                                     & dd/mm/aaaa \\ \hline
+1.1      & Entrega hasta punto 6                                           & 08/09/2020 \\ \hline
+%1.2      & Otro ejemplo \newline
+%		   Con texto partido \newline
+%		   En varias líneas \newline
+%		   A propósito                                                     & dd/mm/aaaa \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -84,7 +84,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el prototipo preliminar de un sistema de control de temperatura de un calefón, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Lic. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en el desarrollo de un sistema para seguimiento de estado de procesos en taller de rectificaciones de motopartes, y tendrá un presupuesto preliminar estimado de 600 hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -107,22 +107,20 @@ Se adjunta a esta acta la planificación inicial.
 \section{Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red}
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
+\begin{consigna}{black}
+El sistema a desarrollar será capaz de monitorear el estado actual de cada repuesto que se encuentre en el negocio para ser reparado.
+Se desarrollará una aplicación web y una app mobil para registrar a los clientes y a cada respuesto que ingresa al taller.
+Cada estado de trabajo tiene su respectivo sector (en espera, en proceso, finalizado y entregado), se utilizará un lector RFID para cada sector y una tarjeta RFID será asignada a cada repuesto ingresado.
+El personal que se encargue de realizar cada trabajo de reparación será quien, a medida que va trasladando el repuesto de un sector a otro, pase la tarjeta correspondiente por cada lector RFID. 
+Cada lector enviará los datoa actualizados al servidor, el cual almacenará el cambio de estado en una base de datos y realizará la actualización de la información en la aplicación web.
+Desde la app web/mobil se podrán visualizar todas las etapas del proceso, además los clientes podrán consultar el estado de su trabajo en tiempo real.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+De esta manera se podrá mantener informados a todos los miembros de la organizacion sobre cuales son los procesos que se están llevando a cabo en tiempo real, tener un historial de los mismos, base de datos de clientes, informes de cantidad de trabajos por periodo de tiempo determinado, clientes frecuentes, tipos de trabajos frecuentes, entre otros.
+Además cada cliente podrá consultar el estado de su trabajo, tener un historial de trabajos y recibir alertas automáticas por email o sms ante la finalizacion de un trabajo.
 
-\begin{itemize}
-\item ¿Cómo se vincula este proyecto con la misión de la organización?
-\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-\item ¿Cuales son las necesidades que debe satisfacer?
-\item ¿Por dónde pasa la innovación?
-\end{itemize}
+Una de las ventajas principales de este sistema es la utilización de tarjetas RFID, ya que el trabajador no necesitará ingresar datos por medio de un teclado o pantalla sino que al pasar la tarjeta por cada lector este ya enviará la información correspondiente a ser actualizada.
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema }y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se puede observar como el repuesto recorre los distintos niveles del proceso representados por los lectores RFID, estos a su vez van actualizando la base de datos en el servidor y este publica los cambios en la APP para ser visualizados por quien corresponda.
 
 \vspace{25px}
 
@@ -135,26 +133,20 @@ La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en
 
 \vspace{25px}
 
-El tamaño de la tipografía en la figura debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama.
 \end{consigna}
 
 
 \section{Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} 
-Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
+\begin{consigna}{black} 
+%Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
  
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
+%Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
  
-Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
+%Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
 
-\begin{itemize}
-\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
-\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
-\end{itemize}
 
-Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -163,32 +155,32 @@ Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por e
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
+%Auspiciante   &                   &              	&        	\\ \hline
 Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+%Impulsor      &                   &              	&        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
+Colaboradores &  Miguel del Valle & Fuerza Aérea   	& Colaboración en hardware\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director	Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+%Equipo        & miembro1 \newline 
+%				miembro2          &              	&        	\\ \hline
+%Opositores    &                   &              	&        	\\ \hline
+Usuario final & --------------  &\empclientename &----------- \\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los Orientadores.
+%El Director suele ser uno de los Orientadores.
 
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
+%No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
 
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
+%No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
 
-Sería deseable listar a continuación de la tabla las principales características de cada interesado.
+%Sería deseable listar a continuación de la tabla las principales características de cada interesado.
  
-Por ejemplo:
+%Por ejemplo:
 \begin{itemize}
-\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-\item Orientador: María Gómez, nos va a poder ayudar mucho con la gestión de impuestos.
+%\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
+\item Colaborador: Se deberá contactar de manera online siempre ya que reside en otra provincia.
+%\item Orientador: María Gómez, nos va a poder ayudar mucho con la gestión de impuestos.
 \end{itemize}
 
 \end{consigna}
@@ -198,23 +190,37 @@ Por ejemplo:
 \section{1. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
+\begin{consigna}{black}
+El propósito de este proyecto es brindar una solución para la supervisión de estados de procesos en negocio familiar de reparación de repuestos. 
 
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
 \end{consigna}
 
 \section{2. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+\begin{consigna}{black}
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
+El proyecto incluye:
+\begin{itemize}
+\item App Web
+\item App Móvil
+\item Servidor web
+\item Servidor - Procesador
+\item Base de Datos
+\item Lectores RFID
+\item Tarjetas magnéticas (50 unidades)
+\item Instalación y configuración de todo el sistema
+\item Capacitación
+\item Manuales
+\item 3 meses de garantía de mantenimiento
+\end{itemize}
 
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+El proyecto no incluye:
+\begin{itemize}
+\item Dispositivos cliente: CPU, Celulares, etc.
+\item Servicio de internet
+\item UPS o estabilizadores de tensión
+\end{itemize}
 
 \end{consigna}
 
@@ -222,15 +228,17 @@ Explicitar además todo lo que no quede incluido (``El presente proyecto no incl
 \section{3. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+\begin{consigna}{black}
 
+Para el desarrollo del presente proyecto se supone que:
 \begin{itemize}
-\item Supuesto 1
-\item Supuesto 2...
+\item El cliente cuenta con conexión a internet en la organización
+\item El/Los empleados de mostrador tienen conocimientos mínimos de PC
+\item El cliente autorizará el ingreso a la organización durante el desarrollo para la realización de pruebas iniciales.
+
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
+
 \end{consigna}
 
 \section{4. Requerimientos}
@@ -240,16 +248,30 @@ Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y
 Los requerimientos deben numerarse y de ser posible agruparlos por afinidad:
 
 \begin{enumerate}
-\item Grupo de requerimientos asociados con...
+\item Grupo de requerimientos asociados con el Servidor
 	\begin{enumerate}
-	\item Requerimiento 1
-	\item Requerimiento 2
-	\item Requerimiento 3 (prioridad menor)
+	\item Comunicación websocket con Esp32 (lectores rfid)
+	\item Almacenamiento de base de datos (MySql,MariaDB o PostgreSql)
+	\item Procesamiento en lenguaje de nivel medio (Python)
+	\item Tecnologías Rest para comunicación con los demás servicios.
 	\end{enumerate}
-\item Grupo de requerimientos asociados con...
+\item Grupo de requerimientos asociados con Aplicación Web
 	\begin{enumerate}
-	\item Requerimiento 1
-	\item Requerimiento 2 (prioridad menor)
+	\item Registro de repuestos entrantes
+	\item Actualización inmediata de estados de procesos
+	\item ABM de clientes
+	\item Búsqueda avanzada: por fecha, por cliente, por estado (para usuarios y administradores)
+	\item Búsqueda de repuestos por id (para clientes) sin necesidad de acceso con usuario y contraseña.
+	\item Roles: Usuario, Administrador, Cliente. Con nombre de usuario y contraseña excepto clientes.
+	\item Diseño web adaptable (responsive design) y amigable.
+	\end{enumerate}
+\item Grupo de requerimientos asociados con Aplicación Móvil
+	\begin{enumerate}
+	\item Actualización inmediata de estados de procesos
+	\item Búsqueda avanzada: por fecha, por cliente, por estado (para usuarios y administradores)
+	\item Búsqueda de repuestos por id (para clientes) sin necesidad de acceso con usuario y contraseña.
+	\item Roles: Usuario, Administrador, Cliente. Con nombre de usuario y contraseña excepto clientes.
+	\item Diseño amigable.
 	\end{enumerate}
 \end{enumerate}
 
@@ -277,15 +299,26 @@ Y al escribirlos seguir las siguientes reglas:
 Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
 \end{consigna}
 
+\begin{consigna}{black}
+Historia 1: El cliente Miguel Arancibia manifiesta que actualmente no tiene un control inmediato sobre los trabajos que ingresan a la empresa, en qué estado se encuentran, cantidad de trabajos en espera, finalizados, etc. Tampoco tiene una cartera de clientes organizadas y además a la hora de hacer análisis de trabajos realizados en un determinado periodo de tiempo no cuenta con los datos suficientes. 
+Busca un sistema que satisfaga estas necesidades. De manera que pueda tanto él como sus empleados y sus clientes, tengan información en tiempo real sobre los trabajos.
+Ponderación: 10
+
+Historia 2: La encargada de mostrador, Mariangeles, manifiesta la demora en la recepcion de trabajos, para dar de alta a clientes y a los repuestos, anotando datos repetitivos. Además de la cantidad de tiempo que se pierde buscando un repuesto ante la consulta de un cliente sobre el estado de su trabajo.
+Ponderación: 9
+
+Historia 3: El trabajador Raúl nos cuenta que a la hora de buscar un producto específico para saber su estado se pierde mucho tiempo, demorando así a  los clientes.
+Ponderación: 5
+
+\end{consigna}
+
 \section{5. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-Cosas como: 
+\begin{consigna}{black}
+Se entregarán: 
 \begin{itemize}
 \item Manual de uso
-\item Diagrama esquemático
-\item Código fuente
 \item Diagrama de instalación
 \item Informe final
 
@@ -296,23 +329,16 @@ Cosas como:
 \section{6. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-Se recomienda mostrar el WBS mediante una lista indexada:
+\begin{consigna}{black}
 
 \begin{enumerate}
-\item Grupo de tareas 1
+\item Investigación sobre hardware
 	\begin{enumerate}
 	\item Tarea 1 (tantas hs)
 	\item Tarea 2 (tantas hs)
 	\item Tarea 3 (tantas hs)
 	\end{enumerate}
-\item Grupo de tareas 2
-	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\end{enumerate}
-	\item Grupo de tareas 3
+\item investigación sobre conectividad
 	\begin{enumerate}
 	\item Tarea 1 (tantas hs)
 	\item Tarea 2 (tantas hs)
@@ -320,6 +346,37 @@ Se recomienda mostrar el WBS mediante una lista indexada:
 	\item Tarea 4 (tantas hs)
 	\item Tarea 5 (tantas hs)
 	\end{enumerate}
+\item Desarrollo de Servidor
+	\begin{enumerate}
+	\item Tarea 1 (tantas hs)
+	\item Tarea 2 (tantas hs)
+	\item Tarea 3 (tantas hs)
+	\end{enumerate}
+\item Desarrollo de Base de datos
+	\begin{enumerate}
+	\item Tarea 1 (tantas hs)
+	\item Tarea 2 (tantas hs)
+	\item Tarea 3 (tantas hs)
+	\item Tarea 4 (tantas hs)
+	\item Tarea 5 (tantas hs)
+	\end{enumerate}
+\item Desarrollo de Aplicación Web
+	\begin{enumerate}
+	\item Tarea 1 (tantas hs)
+	\item Tarea 2 (tantas hs)
+	\item Tarea 3 (tantas hs)
+	\item Tarea 4 (tantas hs)
+	\item Tarea 5 (tantas hs)
+	\end{enumerate}
+\item Desarrollo de Aplicación Móvil
+	\begin{enumerate}
+	\item Tarea 1 (tantas hs)
+	\item Tarea 2 (tantas hs)
+	\item Tarea 3 (tantas hs)
+	\item Tarea 4 (tantas hs)
+	\item Tarea 5 (tantas hs)
+	\end{enumerate}
+
 \end{enumerate}
 
 Cantidad total de horas: (tantas hs)
