@@ -1,7 +1,7 @@
 \documentclass[11pt]{charter}
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{SISTEMA DE SEGUIMIENTO DE PROCESOS EN RECTIFICADORA DE MOTOPARTES} 
+\titulo{Sistema de seguimiento de procesos en rectificadora de motopartes}
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -109,11 +109,11 @@ Se adjunta a esta acta la planificación inicial.
 
 \begin{consigna}{black}
 El sistema a desarrollar será capaz de monitorear el estado actual de cada repuesto que se encuentre en el negocio para ser reparado.
-Se desarrollará una aplicación web y una app mobil para registrar a los clientes y a cada respuesto que ingresa al taller.
+Se desarrollará una aplicación web y una app móvil para registrar a los clientes y a cada respuesto que ingresa al taller.
 Cada estado de trabajo tiene su respectivo sector (en espera, en proceso, finalizado y entregado), se utilizará un lector RFID para cada sector y una tarjeta RFID será asignada a cada repuesto ingresado.
 El personal que se encargue de realizar cada trabajo de reparación será quien, a medida que va trasladando el repuesto de un sector a otro, pase la tarjeta correspondiente por cada lector RFID. 
 Cada lector enviará los datoa actualizados al servidor, el cual almacenará el cambio de estado en una base de datos y realizará la actualización de la información en la aplicación web.
-Desde la app web/mobil se podrán visualizar todas las etapas del proceso, además los clientes podrán consultar el estado de su trabajo en tiempo real.
+Desde la app web/móvil se podrán visualizar todas las etapas del proceso, además los clientes podrán consultar el estado de su trabajo en tiempo real.
 
 De esta manera se podrá mantener informados a todos los miembros de la organizacion sobre cuales son los procesos que se están llevando a cabo en tiempo real, tener un historial de los mismos, base de datos de clientes, informes de cantidad de trabajos por periodo de tiempo determinado, clientes frecuentes, tipos de trabajos frecuentes, entre otros.
 Además cada cliente podrá consultar el estado de su trabajo, tener un historial de trabajos y recibir alertas automáticas por email o sms ante la finalizacion de un trabajo.
@@ -126,7 +126,7 @@ En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistem
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.7\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=.9\textwidth]{./Figuras/diagBloques.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
@@ -218,7 +218,7 @@ El proyecto incluye:
 El proyecto no incluye:
 \begin{itemize}
 \item Dispositivos cliente: CPU, Celulares, etc.
-\item Servicio de internet
+\item Servicio de Internet
 \item UPS o estabilizadores de tensión
 \end{itemize}
 
@@ -232,8 +232,8 @@ El proyecto no incluye:
 
 Para el desarrollo del presente proyecto se supone que:
 \begin{itemize}
-\item El cliente cuenta con conexión a internet en la organización
-\item El/Los empleados de mostrador tienen conocimientos mínimos de PC
+\item El cliente cuenta con conexión a Internet en la organización
+\item Los empleados de mostrador tienen conocimientos mínimos de PC
 \item El cliente autorizará el ingreso a la organización durante el desarrollo para la realización de pruebas iniciales.
 
 \end{itemize}
@@ -241,19 +241,20 @@ Para el desarrollo del presente proyecto se supone que:
 
 \end{consigna}
 
-\section{4. Requerimientos}
+\section{4. Requerimientos de Software}
 \label{sec:requerimientos}
 
 \begin{consigna}{black}
 %Los requerimientos deben numerarse y de ser posible agruparlos por afinidad:
 
 \begin{enumerate}
-\item Grupo de requerimientos asociados con el Servidor
+\item Grupo de requerimientos asociados con el Servidor:
 	\begin{enumerate}
-	\item Comunicación websocket con Esp32 (lectores rfid)
+	\item Comunicación websocket con Esp32 (lectores RFID)
 	\item Almacenamiento de base de datos (MySql,MariaDB o PostgreSql)
 	\item Procesamiento en lenguaje de nivel medio (Python)
 	\item Tecnologías Rest para comunicación con los demás servicios.
+	\\\\ Prioridad del requerimiento: Alta.
 	\end{enumerate}
 \item Grupo de requerimientos asociados con Aplicación Web
 	\begin{enumerate}
@@ -264,6 +265,7 @@ Para el desarrollo del presente proyecto se supone que:
 	\item Búsqueda de repuestos por id (para clientes) sin necesidad de acceso con usuario y contraseña.
 	\item Roles: Usuario, Administrador, Cliente. Con nombre de usuario y contraseña excepto clientes.
 	\item Diseño web adaptable (responsive design) y amigable.
+	\\\\ Prioridad del requerimiento: Alta.
 	\end{enumerate}
 \item Grupo de requerimientos asociados con Aplicación Móvil
 	\begin{enumerate}
@@ -272,6 +274,7 @@ Para el desarrollo del presente proyecto se supone que:
 	\item Búsqueda de repuestos por id (para clientes) sin necesidad de acceso con usuario y contraseña.
 	\item Roles: Usuario, Administrador, Cliente. Con nombre de usuario y contraseña excepto clientes.
 	\item Diseño amigable.
+	\\\\ Prioridad del requerimiento: Media.
 	\end{enumerate}
 \end{enumerate}
 
@@ -295,20 +298,30 @@ Para el desarrollo del presente proyecto se supone que:
 \section{Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
+%\begin{consigna}{red}
 %Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
-\end{consigna}
+%\end{consigna}
 
 \begin{consigna}{black}
-%Historia 1: El cliente Miguel Arancibia manifiesta que actualmente no tiene un control inmediato sobre los trabajos que ingresan a la empresa, en qué estado se encuentran, cantidad de trabajos en espera, finalizados, etc. Tampoco tiene una cartera de clientes organizadas y además a la hora de hacer análisis de trabajos realizados en un determinado periodo de tiempo no cuenta con los datos suficientes. 
-%Busca un sistema que satisfaga estas necesidades. De manera que pueda tanto él como sus empleados y sus clientes, tengan información en tiempo real sobre los trabajos.
-%Ponderación: 10
+Historia 1: Como jefe de taller quiero tener una lista que se actualize inmediatamente cuando un repuesto ingresa a la empresa, con el objetivo de establecer prioridades de servicio.
+\\Ponderación: 13 puntos.
 
-%Historia 2: La encargada de mostrador, Mariangeles, manifiesta la demora en la recepcion de trabajos, para dar de alta a clientes y a los repuestos, anotando datos repetitivos. Además de la cantidad de tiempo que se pierde buscando un repuesto ante la consulta de un cliente sobre el estado de su trabajo.
-%Ponderación: 9
+Historia 2: Como encargada de redes sociales y telefonista necesito tener actualizado y a mano el estado de trabajos para informar a los clientes ante una consulta.
+\\Ponderación: 34 puntos.
 
-%Historia 3: El trabajador Raúl nos cuenta que a la hora de buscar un producto específico para saber su estado se pierde mucho tiempo, demorando así a  los clientes.
-%Ponderación: 5
+Historia 3: Como personal del mostrador me gustaría tener una Cartera de clientes digitalizada para no tener que cargar una y otra vez a los mismos clientes cada vez que traen un repuesto a reparar.
+\\Ponderación: 13 puntos.
+
+Historia 4: Como contadora quiero tener un balance de trabajos diarios, semanales y mensuales que se genere de manera automática para no tener que demorar en hacer conteos de tickets como se realiza actualmente, además se reducirían las posibilidades de cometer errores en los cálculos.
+\\Ponderación: 21 puntos.
+
+Historia 5: Como cliente frecuente me interesaría poder revisar el estado de mis trabajos desde mi celular para saber cuando tengo que venir a buscarlos sin necesidad de realizar una llamada telefónica.
+\\Ponderación: 34 puntos.
+
+Historia 6: Como empleado de taller quiero que exista una lista de estados de trabajos de manera que no tenga yo que interrumpir mis tareas para buscar un repuesto específico cada vez que hay que informar sobre los mismos ante una consulta.
+\\Ponderación: 8 puntos.
+
+Criterio de ponderación: se utilizó la serie de Fibonacci para establecer los puntos.  
 
 \end{consigna}
 
@@ -342,57 +355,57 @@ Se entregarán:
 	\item Lenguajes para backend (6 hs)
 	\item Motores de base de datos (6 hs)
 	\item Lenguajes para Front-End (6 hs)
-	\item Lenguajes para Mobile (6 hs)
+	\item Lenguajes para Móvil (6 hs)
 	\end{enumerate}
 \item Desarrollo de Servidor
 	\begin{enumerate}
 	\item Programación procesador (40 hs)
 	\item Programacion Nodemcu (20)
-	\item Programacion Rfid (20)
+	\item Programacion RFID (20)
 	\item Pruebas y testeos (18 hs)
 	\item Implementación (18 hs)
 	\end{enumerate}
 \item Desarrollo de Base de datos
 	\begin{enumerate}
 	\item Diagrama entidades y realaciones (18 hs)
-	\item creación de base de datos (18 hs)
+	\item Creación de base de datos (18 hs)
 	\end{enumerate}
 \item Desarrollo de Aplicación Web
 	\begin{enumerate}
-	\item Preparación de entrono de trabajo (3 hs)
+	\item Preparación de entrono de trabajo Front-End (3 hs)
 	\item Administración usuarios (18 hs)
 	\item ABM Clientes (18 hs)
 	\item Template registro repuestos(9 hs)
-	\item Template Busquedas(9 hs)
+	\item Template Búsquedas(9 hs)
 	\item Preparación entorno de trabajo backend (3 hs)
-	\item backend Administración usuarios(20 hs)
-	\item backend ABM Clientes (20 hs)
-	\item backend templates(20 hs)
+	\item Backend Administración usuarios(20 hs)
+	\item Backend ABM Clientes (20 hs)
+	\item Backend templates(20 hs)
 	\item Integración con base de datos (18 hs)
 	\item Pruebas y testeos (18 hs)
-	\item Modificaciones necesarias (18 hs)
+	%\item Modificaciones necesarias (18 hs)
 	\end{enumerate}
 \item Desarrollo de Aplicación Móvil
 	\begin{enumerate}
-	\item Preparación de entrono de trabajo (3 hs)
+	\item Preparación de entrono de trabajo Front-End(3 hs)
 	\item Administración usuarios (18 hs)
 	\item ABM Clientes (18 hs)
 	\item Template registro repuestos(9 hs)
 	\item Template Busquedas(9 hs)
 	\item Preparación entorno de trabajo backend (3 hs)
-	\item reutilización de código backend de App Web (18 hs)
+	\item Reutilización de código backend de App Web (18 hs)
 	\item Integración con base de datos (18 hs)
 	\item Pruebas y testeos (18 hs)
-	\item Modificaciones necesarias (18 hs)
+	%\item Modificaciones necesarias (18 hs)
 	\end{enumerate}
 \item Implementación
 	\begin{enumerate}
-	\item Pruebas en entorno de desarrollo  (30 hs)
+	\item Pruebas en entorno de desarrollo  (24 hs)
 	\item Instalación de hardware en entorno de producción (30 hs)
 	\item Configuraciónes (30 hs)
 	\item Capacitación al personal (30 hs)
 	\item Pruebas en entorno de producción (30 hs)
-	\item Modificaciones necesarias (18 hs)
+	\item Modificaciones necesarias en el sistema (18 hs)
 	\end{enumerate}
 \item Documentación
 	\begin{enumerate}
@@ -404,7 +417,7 @@ Se entregarán:
 
 \end{enumerate}
 
-Cantidad total de horas: (713 hs)
+Cantidad total de horas: (671 hs)
 
 %Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
 
