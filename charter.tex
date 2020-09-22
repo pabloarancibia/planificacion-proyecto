@@ -64,8 +64,8 @@
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 1.0      & Creación del documento                                          & 27/06/2020 \\ \hline
 1.1      & Entrega hasta punto 6                                           & 08/09/2020 \\ \hline
-%1.2      & Otro ejemplo \newline
-%		   Con texto partido \newline
+1.2      & Entrega historias de usuario										& 15/09/2020    \\ \hline
+1.3	     & Entrega hasta punto 11										& 22/09/2020    \\ \hline
 %		   En varias líneas \newline
 %		   A propósito                                                     & dd/mm/aaaa \\ \hline
 \end{tabularx}
@@ -109,14 +109,14 @@ Se adjunta a esta acta la planificación inicial.
 
 \begin{consigna}{black}
 El sistema a desarrollar será capaz de monitorear el estado actual de cada repuesto que se encuentre en el negocio para ser reparado.
-Se desarrollará una aplicación web y una app móvil para registrar a los clientes y a cada respuesto que ingresa al taller.
+Se desarrollará una aplicación web y una app móvil para registrar a los clientes y a cada repuesto que ingresa al taller.
 Cada estado de trabajo tiene su respectivo sector (en espera, en proceso, finalizado y entregado), se utilizará un lector RFID para cada sector y una tarjeta RFID será asignada a cada repuesto ingresado.
 El personal que se encargue de realizar cada trabajo de reparación será quien, a medida que va trasladando el repuesto de un sector a otro, pase la tarjeta correspondiente por cada lector RFID. 
-Cada lector enviará los datoa actualizados al servidor, el cual almacenará el cambio de estado en una base de datos y realizará la actualización de la información en la aplicación web.
+Cada lector enviará los datos actualizados al servidor, el cual almacenará el cambio de estado en una base de datos y realizará la actualización de la información en la aplicación web.
 Desde la app web/móvil se podrán visualizar todas las etapas del proceso, además los clientes podrán consultar el estado de su trabajo en tiempo real.
 
-De esta manera se podrá mantener informados a todos los miembros de la organizacion sobre cuales son los procesos que se están llevando a cabo en tiempo real, tener un historial de los mismos, base de datos de clientes, informes de cantidad de trabajos por periodo de tiempo determinado, clientes frecuentes, tipos de trabajos frecuentes, entre otros.
-Además cada cliente podrá consultar el estado de su trabajo, tener un historial de trabajos y recibir alertas automáticas por email o sms ante la finalizacion de un trabajo.
+De esta manera se podrá mantener informados a todos los miembros de la organización sobre cuales son los procesos que se están llevando a cabo en tiempo real, tener un historial de los mismos, base de datos de clientes, informes de cantidad de trabajos por periodo de tiempo determinado, clientes frecuentes, tipos de trabajos frecuentes, entre otros.
+Además cada cliente podrá consultar el estado de su trabajo, tener un historial de trabajos y recibir alertas automáticas por email o sms ante la finalización de un trabajo.
 
 Una de las ventajas principales de este sistema es la utilización de tarjetas RFID, ya que el trabajador no necesitará ingresar datos por medio de un teclado o pantalla sino que al pasar la tarjeta por cada lector este ya enviará la información correspondiente a ser actualizada.
 
@@ -303,25 +303,27 @@ Para el desarrollo del presente proyecto se supone que:
 %\end{consigna}
 
 \begin{consigna}{black}
-Historia 1: Como jefe de taller quiero tener una lista que se actualize inmediatamente cuando un repuesto ingresa a la empresa, con el objetivo de establecer prioridades de servicio.
-\\Ponderación: 13 puntos.
-
-Historia 2: Como encargada de redes sociales y telefonista necesito tener actualizado y a mano el estado de trabajos para informar a los clientes ante una consulta.
-\\Ponderación: 34 puntos.
-
-Historia 3: Como personal del mostrador me gustaría tener una Cartera de clientes digitalizada para no tener que cargar una y otra vez a los mismos clientes cada vez que traen un repuesto a reparar.
-\\Ponderación: 13 puntos.
-
-Historia 4: Como contadora quiero tener un balance de trabajos diarios, semanales y mensuales que se genere de manera automática para no tener que demorar en hacer conteos de tickets como se realiza actualmente, además se reducirían las posibilidades de cometer errores en los cálculos.
-\\Ponderación: 21 puntos.
-
-Historia 5: Como cliente frecuente me interesaría poder revisar el estado de mis trabajos desde mi celular para saber cuando tengo que venir a buscarlos sin necesidad de realizar una llamada telefónica.
-\\Ponderación: 34 puntos.
-
-Historia 6: Como empleado de taller quiero que exista una lista de estados de trabajos de manera que no tenga yo que interrumpir mis tareas para buscar un repuesto específico cada vez que hay que informar sobre los mismos ante una consulta.
-\\Ponderación: 8 puntos.
 
 Criterio de ponderación: se utilizó la serie de Fibonacci para establecer los puntos.  
+
+Historia 1: como jefe de taller quiero tener una lista que se actualice inmediatamente cuando un repuesto ingresa a la empresa, con el objetivo de establecer prioridades de servicio.
+\\Ponderación: 13 puntos.
+
+Historia 2: como encargada de redes sociales y telefonista necesito tener actualizado y a mano el estado de trabajos para informar a los clientes ante una consulta.
+\\Ponderación: 34 puntos.
+
+Historia 3: como personal del mostrador me gustaría tener una Cartera de clientes digitalizada para no tener que cargar una y otra vez a los mismos clientes cada vez que traen un repuesto a reparar.
+\\Ponderación: 13 puntos.
+
+Historia 4: como contadora quiero tener un balance de trabajos diarios, semanales y mensuales que se genere de manera automática para no tener que demorar en hacer conteos de tickets como se realiza actualmente, además se reducirían las posibilidades de cometer errores en los cálculos.
+\\Ponderación: 21 puntos.
+
+Historia 5: como cliente frecuente me interesaría poder revisar el estado de mis trabajos desde mi celular para saber cuando tengo que venir a buscarlos sin necesidad de realizar una llamada telefónica.
+\\Ponderación: 34 puntos.
+
+Historia 6: como empleado de taller quiero que exista una lista de estados de trabajos de manera que no tenga yo que interrumpir mis tareas para buscar un repuesto específico cada vez que hay que informar sobre los mismos ante una consulta.
+\\Ponderación: 8 puntos.
+
 
 \end{consigna}
 
@@ -345,7 +347,7 @@ Se entregarán:
 \begin{enumerate}
 \item Investigación sobre hardware
 	\begin{enumerate}
-	\item Rasperri Pi: modelos, rendimiento, capacidades, etc. (6 hs)
+	\item Raspberry Pi: modelos, rendimiento, capacidades, etc. (6 hs)
 	\item Nodemcu: Modelos, rendimiento, conectividad, protocolos, etc.  (6 hs)
 	\item RFID: compatibilidad, componentes disponibles, MFRC522, otras. (6 hs)
 	\item Otros componentes: listado de componentes (6 hs)
@@ -360,15 +362,14 @@ Se entregarán:
 \item Desarrollo de Servidor
 	\begin{enumerate}
 	\item Programación procesador (40 hs)
-	\item Programacion Nodemcu (20)
-	\item Programacion RFID (20)
+	\item Programación Nodemcu (20)
+	\item Programación RFID (20)
 	\item Pruebas y testeos (18 hs)
 	\item Implementación (18 hs)
 	\end{enumerate}
 \item Desarrollo de Base de datos
 	\begin{enumerate}
-	\item Diagrama entidades y realaciones (18 hs)
-	\item Creación de base de datos (18 hs)
+	\item Diagrama entidades y relaciones (18 hs)
 	\end{enumerate}
 \item Desarrollo de Aplicación Web
 	\begin{enumerate}
@@ -391,9 +392,9 @@ Se entregarán:
 	\item Administración usuarios (18 hs)
 	\item ABM Clientes (18 hs)
 	\item Template registro repuestos(9 hs)
-	\item Template Busquedas(9 hs)
+	\item Template Búsquedas(9 hs)
 	\item Preparación entorno de trabajo backend (3 hs)
-	\item Reutilización de código backend de App Web (18 hs)
+	\item Re-utilización de código backend de App Web (18 hs)
 	\item Integración con base de datos (18 hs)
 	\item Pruebas y testeos (18 hs)
 	%\item Modificaciones necesarias (18 hs)
@@ -402,9 +403,9 @@ Se entregarán:
 	\begin{enumerate}
 	\item Pruebas en entorno de desarrollo  (24 hs)
 	\item Instalación de hardware en entorno de producción (30 hs)
-	\item Configuraciónes (30 hs)
-	\item Capacitación al personal (30 hs)
+	\item Configuraciones (30 hs)
 	\item Pruebas en entorno de producción (30 hs)
+	\item Capacitación al personal (30 hs)
 	\item Modificaciones necesarias en el sistema (18 hs)
 	\end{enumerate}
 \item Documentación
@@ -417,7 +418,7 @@ Se entregarán:
 
 \end{enumerate}
 
-Cantidad total de horas: (671 hs)
+Cantidad total de horas: (653 hs)
 
 %Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
 
@@ -427,7 +428,7 @@ Cantidad total de horas: (671 hs)
 \label{sec:AoN}
 
 \begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior. 
+%Armar el AoN a partir del WBS definido en la etapa anterior. 
 
 %La figura \ref{fig:AoN} fue elaborada con el paquete latex tikz y pueden consultar la siguiente referencia \textit{online}:
 
@@ -437,59 +438,112 @@ Armar el AoN a partir del WBS definido en la etapa anterior.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
+\includegraphics[width=.9\textwidth]{./Figuras/AON-1.png}
+\caption{Diagrama en \textit{Activity on Node}}
+\label{fig:AoN}
+\end{figure}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.9\textwidth]{./Figuras/AON-2.png}
 \caption{Diagrama en \textit{Activity on Node}}
 \label{fig:AoN}
 \end{figure}
 
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.9\textwidth]{./Figuras/AON-3.png}
+\caption{Diagrama en \textit{Activity on Node}}
+\label{fig:AoN}
+\end{figure}
 
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.9\textwidth]{./Figuras/AON-4.png}
+\caption{Diagrama en \textit{Activity on Node}}
+\label{fig:AoN}
+\end{figure}
+
+Unidad de tiempo expresada en horas.
+\\Camino crítico: tareas: 1.1 - 1.2 - 1.3 - 1.4 - 2.1 - 2.2 - 2.3 - 2.4 - 3.1 - 3.4 - 3.5 - 4.1 - 5.1 - 5.2 - 5.6 - 5.7 - 5.10 - 5.11 - 6.1 - 6.2 - 6.7 - 6.8 - 6.9 - 7.1 - 7.2 - 7.3 - 7.4 - 7.5 - 7.6 - 8.1 .
+\\Cantidad de horas del camino crítico: 474 horas.
 
 
 \section{8. Diagrama de Gantt}
 \label{sec:gantt}
 
-\begin{consigna}{red}
-Utilizar el software Gantter for Google Drive o alguno similar para dibujar el diagrama de Gantt.
+\begin{consigna}{black}
+%Utilizar el software Gantter for Google Drive o alguno similar para dibujar el diagrama de Gantt.
 
-Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre las cuales destacamos:
+%Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre las cuales destacamos:
 
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
+%\begin{itemize}
+%\item Planner
+%\item GanttProject
+%\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
+%\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
+%\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
+%\end{itemize}
 
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
+%Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
+%Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
 
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
+%Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
+%Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
+%Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
 
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
+%En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
 
-\begin{figure}[htbp]
-\begin{center}
-\begin{ganttchart}{1}{12}
-  \gantttitle{2020}{12} \\
-  \gantttitlelist{1,...,12}{1} \\
-  \ganttgroup{Group 1}{1}{7} \\
-  \ganttbar{Task 1}{1}{2} \\
-  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-  \ganttbar{Final Task}{8}{12}
-  \ganttlink{elem2}{elem3}
-  \ganttlink{elem3}{elem4}
-\end{ganttchart}
-\end{center}
-\caption{Diagrama de gantt de ejemplo}
-\label{fig:gantt}
+%\begin{figure}[htbp]
+%\begin{center}
+%\begin{ganttchart}{1}{12}
+%  \gantttitle{2020}{12} \\
+%  \gantttitlelist{1,...,12}{1} \\
+%  \ganttgroup{Group 1}{1}{7} \\
+%  \ganttbar{Task 1}{1}{2} \\
+%  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
+%  \ganttmilestone{Milestone o hito}{7} \ganttnewline
+%  \ganttbar{Final Task}{8}{12}
+%  \ganttlink{elem2}{elem3}
+%  \ganttlink{elem3}{elem4}
+%\end{ganttchart}
+%\end{center}
+%\caption{Diagrama de gantt de ejemplo}
+%\label{fig:gantt}
+%\end{figure}
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.8\textwidth]{./Figuras/Gantt-2-1.png}
+\caption{Diagrama de \textit{Gantt}. Tabla de tareas}
+\label{fig:AoN}
 \end{figure}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.8\textwidth]{./Figuras/Gantt-2-2.png}
+\caption{Diagrama de \textit{Gantt}. Tabla de tareas}
+\label{fig:AoN}
+\end{figure}
+
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.9\textwidth]{./Figuras/Gantt-3-1.png}
+\caption{Diagrama de \textit{Gantt}}
+\label{fig:AoN}
+\end{figure}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.9\textwidth]{./Figuras/Gantt-3-2.png}
+\caption{Diagrama de \textit{Gantt}}
+\label{fig:AoN}
+\end{figure}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[width=.9\textwidth]{./Figuras/Gantt-3-3.png}
+\caption{Diagrama de \textit{Gantt}}
+\label{fig:AoN}
+\end{figure}
+
+
 
 \end{consigna}
 
@@ -503,35 +557,27 @@ En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realiza
 \begin{tabularx}{\linewidth}{@{}|c|X|X|X|X|c|@{}}
 \hline
 \cellcolor[HTML]{C0C0C0} & \cellcolor[HTML]{C0C0C0} & \multicolumn{4}{c|}{\cellcolor[HTML]{C0C0C0}Recursos requeridos (horas)} \\ \cline{3-6} 
-\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre \\ tarea\end{tabular}} & Material 1 & Material 2 & Material 3 & Material 4 \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline 
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline 
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
+\multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} & \multirow{-2}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Nombre \\ tarea\end{tabular}} & Raspberry Pi & Nodemcu & RFID & PC \\ \hline
+1.1 &Investigación Raspberry Pi 	 &3  &  &  &3  \\ \hline
+1.2 &Investigación Nodemcu  		&1  &3  &  &3  \\ \hline
+1.3 &Investigación RFID		 	 	&1 &1  &3  &3  \\ \hline
+1.4 &Otros componentes  &  &  &  &6  \\ \hline
+2. &Investigación sobre tecnologías  &  &  &  &24  \\ \hline
+3.1 &Programación procesador  &10  &  &  &40  \\ \hline
+3.2 &Programación Nodemcu  &  &10  &  &20  \\ \hline
+3.3 &Programación RFID  &5  &5  &10  &20  \\ \hline
+3.4 &Pruebas y testeos  &9  &6  &3  &18  \\ \hline
+3.5 &Implementación  &9  &6  &3  &18  \\ \hline
+4.1 &Diagrama entidad relación  &  &  &  &18  \\ \hline
+5 &Desarrollo de aplicación web  &  &  &  &156  \\ \hline
+6 &Desarrollo de aplicación móvil  &  &  &  &114  \\ \hline
+7.1 &Pruebas en entorno de desarrollo  &6  &6  &6  &24  \\ \hline
+7.2 &Instalación de hardware en producción  &12  &12  &6  &  \\ \hline
+7.3 &Configuraciones  &10  &10  &10  &20  \\ \hline
+7.4 &Pruebas en producción   &9  &6  &3  &22  \\ \hline 
+7.5 &Capacitación de personal  &6  &3  &1  &20  \\ \hline
+8 &Documentación  &  &  &  &39  \\ \hline
+
 
 \end{tabularx}%
 \end{table}
@@ -540,14 +586,14 @@ En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realiza
 \section{10. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
+\begin{consigna}{black}
+%Si el proyecto es complejo entonces separarlo en partes:
+%\begin{itemize}
+%\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
+%\item El desglose detallado del subtotal de cada una de las áreas.
+%\end{itemize}
 
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
+%IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
 
 \end{consigna}
 
@@ -562,24 +608,15 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+ Horas de Ingeniería &   \multicolumn{1}{c|}{653} &  \multicolumn{1}{c|}{800} & \multicolumn{1}{c|}{522400} \\ \hline
+Raspberry Pi&  \multicolumn{1}{c|}{1} &  \multicolumn{1}{c|}{15000} &  \multicolumn{1}{c|}{15000} \\ \hline
+Nodemcu&  \multicolumn{1}{c|}{4} &  \multicolumn{1}{c|}{900} &  \multicolumn{1}{c|}{3600} \\ \hline
+RFID &  \multicolumn{1}{c|}{50} &  \multicolumn{1}{c|}{40} &  \multicolumn{1}{c|}{2000} \\ \hline
+Cables y otros electricidad &  \multicolumn{1}{c|}{1} &  \multicolumn{1}{c|}{3000} &  \multicolumn{1}{c|}{3000} \\ \hline
+Cajas plásticas&  \multicolumn{1}{c|}{40} &  \multicolumn{1}{c|}{100} &  \multicolumn{1}{c|}{4000} \\ \hline
+
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{550000} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -587,22 +624,13 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+\multicolumn{1}{|l|}{25\% de los costos directos	} &1    &137500    &137500    \\ \hline
+	\multicolumn{1}{|l|}{} &    &    &    \\ \hline
+	\multicolumn{1}{|l|}{} &    &    &    \\ \hline
+	\multicolumn{3}{|c|}{SUBTOTAL} &
+  \multicolumn{1}{c|}{137500} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
+\multicolumn{3}{|c|}{TOTAL} &687500
    \\ \hline
 \end{tabularx}%
 \end{table}
@@ -610,8 +638,8 @@ Descripción &
 
 \section{11. Matriz de asignación de responsabilidades}
 \label{sec:responsabilidades}
-\begin{consigna}{red}
-Establecer la matriz de asignación de responsabilidades y el manejo de la autoridad completando la siguiente tabla:
+\begin{consigna}{black}
+%Establecer la matriz de asignación de responsabilidades y el manejo de la autoridad completando la siguiente tabla:
 
 \begin{table}[htpb]
 \centering
@@ -627,18 +655,23 @@ Establecer la matriz de asignación de responsabilidades y el manejo de la autor
   \cellcolor[HTML]{C0C0C0} &
   Responsable &
   Orientador &
-  Equipo &
+  Codirector &
   Cliente \\ \cline{3-6} 
 \rowcolor[HTML]{C0C0C0} 
 \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}\begin{tabular}[c]{@{}c@{}}Código\\ WBS\end{tabular}} &
   \multirow{-3}{*}{\cellcolor[HTML]{C0C0C0}Nombre de la tarea} &
   \authorname &
   \supname &
-  Nombre de alguien &
+  Miguel del Valle &
   \clientename \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
+ 1 & Investigación hardware & P & A & C &  \\ \hline
+ 2 & Investigación sobre tecnologías & P  & A & C &  \\ \hline
+ 3 & Desarrollo de servidor & P & A & C & I \\ \hline
+ 4 & Desarrollo de base de datos & P & I & I &  \\ \hline
+ 5 & Desarrollo de aplicación web & P & A & C & I  \\ \hline
+ 6 & Desarrollo de aplicación móvil & P & A & C & I  \\ \hline
+ 7 & Implementación & P & A & C & A  \\ \hline
+ 8 & Documentación & P & A & C & I  \\ \hline
 \end{tabular}%
 }
 \end{table}
@@ -654,10 +687,10 @@ Referencias:
 \end{itemize}
 } %footnotesize
 
-Una de las columnas debe ser para el Director, ya que se supone que participará en el proyecto.
-A su vez se debe cuidar que no queden muchas tareas seguidas sin ``A'' o ``I''.
+%Una de las columnas debe ser para el Director, ya que se supone que participará en el proyecto.
+%A su vez se debe cuidar que no queden muchas tareas seguidas sin ``A'' o ``I''.
 
-Importante: es redundante poner ``I/A'' o ``I/C'', porque para aprobarlo o responder consultas primero la persona debe ser informada.
+%Importante: es redundante poner ``I/A'' o ``I/C'', porque para aprobarlo o responder consultas primero la persona debe ser informada.
 
 \end{consigna}
 
