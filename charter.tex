@@ -14,10 +14,10 @@
 \autor{Pablo Arancibia} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
+\director{Mg. Ing. Diego Fernandez}
 \pertenenciaDirector{pertenencia} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{} % si queda vacio no se deberíá incluir 
+\codirector{Ing. Miguel del Valle} % si queda vacio no se deberíá incluir 
 \pertenenciaCoDirector{}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
@@ -551,7 +551,7 @@ Unidad de tiempo expresada en horas.
 \label{sec:recursos}
 
 
-\begin{table}
+\begin{table}[htpb]
 \label{tab:recursos}
 \centering
 \begin{tabularx}{\linewidth}{@{}|c|X|X|X|X|c|@{}}
@@ -697,63 +697,86 @@ Referencias:
 \section{12. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+\begin{consigna}{black}
+a) Identificación de los riesgos y estimación de sus consecuencias:
  
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos)
 \begin{itemize}
-\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-Justificar el motivo por el cual se asigna determinado número de severidad (S).
-\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-Justificar el motivo por el cual se asigna determinado número de (O). 
+\item Severidad (S): mientras más severo, más alto es el número.\\
+\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número.\\
 \end{itemize}   
 
-Riesgo 2:
+Riesgo 1: Bajo rendimiento del hardware seleccionado para el servidor.
 \begin{itemize}
-\item Severidad (S): 
-\item Ocurrencia (O):
+\item Severidad (10): implicaría el retraso en los procesos de la organización, causando perdidas económicas y generando un mal servicio a los clientes.
+\item Ocurrencia (4): se ha investigado el hardware en cuestión y comparado su rendimiento con los requerimientos del sistema. El resultado fue favorable al rendimiento.
 \end{itemize}
 
-Riesgo 3:
+Riesgo 2: No cumplir con la fecha de entrega.
 \begin{itemize}
-\item Severidad (S): 
-\item Ocurrencia (O):
+\item Severidad (8): implica retrasar la aprobación de la especialización y no cumplir con lo esperado por el cliente.
+\item Ocurrencia (3): dados los estudios realizados en este plan, se estima que existen escasas probabilidades de no cumplir con la fecha pactada. 
+\end{itemize}
+
+Riesgo 3: Fallas en la transmisión de datos entre componentes.
+\begin{itemize}
+\item Severidad (9): implicaría el mal funcionamiento de todo el sistema y la entrega de datos imprecisos a los usuarios y los clientes de la empresa.
+\item Ocurrencia (7): se estima que al utilizar comunicaciones inalámbricas pueden existir interferencias entre componentes.
+\end{itemize}
+
+Riesgo 4: Desinterés por parte del personal en la utilización de los servicios.
+\begin{itemize}
+\item Severidad (10): implicaría el fracaso de este producto y una pérdida de inversión monetaria y de tiempo.
+\item Ocurrencia (2): en las entrevistas realizadas el personal se mostró muy interesado en el producto ya que conlleva una manera de trabajar más rápida y cómoda para todos ellos.
+\end{itemize}
+
+Riesgo 5: incremento del costo de los componentes necesarios para el proyecto.
+\begin{itemize}
+\item Severidad (5): conlleva el aumento del presupuesto total para el cliente.
+\item Ocurrencia (10): los productos están en constante aumento por lo que es importante adquirirlos con anticipación.
 \end{itemize}
 
 
 b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
-
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-\end{tabularx}%
+ Riesgo 1: bajo rendimiento del hardware seleccionado para el servidor. &10   &4   &40     &6    &2    &12      \\ \hline
+ Riesgo 2: no cumplir con la fecha de entrega.  &8   &3   &24     &-    & -   & -     \\ \hline
+ Riesgo 3: fallas en la transmisión de datos entre componentes. &9   &7   & 63    &6    &5    &30      \\ \hline
+  Riesgo 4: desinterés por parte del personal en la utilización de los servicios.&10   &2   &20     &-    &  -  & -     \\ \hline
+   Riesgo 5: Incremento del costo de los componentes necesarios para el proyecto. &5   &10   &50     &2    &6    &12      \\ \hline
+\end{tabularx}
 \end{table}
 
-Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+\end{consigna}
+\begin{consigna}{black}
+\begin{itemize}
 
-Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
+\item Criterio adoptado: 
+se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 40.
 
+\item Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
+
+\end{itemize}
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 1: bajo rendimiento del hardware seleccionado para el servidor.
+
+- Severidad (6): debido a que el sistema consta de varios módulos, se podrá implementar algunos servicios por fuera de la placa raspberry, como ser la base de datos o el servidor web. Estos servicios pueden estar alojados en una de las PC de la organización o inclusive en la nube. De esta manera se minimizan los requerimientos de procesamiento a este componente.
+
+- Probabilidad de ocurrencia (2): si se migran servicios de este componente disminuiría considerablemente la demanda de procesamiento.
+
+Riesgo 3: fallas en la transmisión de datos entre componentes.
+ \\- Severidad (6): se implementará un lector adicional y la posibilidad de la entrada manual de datos en una interfaz para casos de contingencia.
+ \\- Probabilidad de ocurrencia (5): Al tener canales alternativos se minimizan las posibilidades de quedarse sin comunicación con el servidor.
  
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 5: incremento del costo de los componentes necesarios para el proyecto.
+\\- Severidad (2): la mayoría de los componentes ya fueron adquiridos, para el resto de componentes se notificará inmediatamente al cliente la recomendación de realizar la compra.
+ \\- Probabilidad de ocurrencia (6): Una vez que se adquieran todos los componentes no influiría el aumento en el mercado de los mismos ya que restaría sólo la compra de accesorios mínimos.
 
 \end{consigna}
 
@@ -761,21 +784,99 @@ Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de
 \section{13. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Para cada uno de los requerimientos del proyecto indique:
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
+\begin{consigna}{black}
 
-Verificación y validación:
-
-\begin{itemize}
-\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
-\end{itemize}
-
-\end{itemize}
-
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.
+\begin{enumerate}
+\item Grupo de requerimientos asociados con el Servidor:
+	\begin{enumerate}
+	\item Comunicación websocket con Esp32 (lectores RFID)
+	\begin{itemize}
+	\item Verificación: pruebas de transmisión de datos entre Esp32 y Raspberry a través de wifi.  
+	\item Validación: constatar con el cliente que al pasar una tarjeta por el lector RFID se actualizan los datos en el servidor.  
+	\end{itemize}
+	\item Almacenamiento de base de datos (MySql,MariaDB o PostgreSql)
+	\begin{itemize}
+	\item Verificación: comprobación de almacenamiento de datos en gestor de base de datos correspondiente.
+	\item Validación: muestra de datos en gestor de base de datos instalado en producción, actualización de datos en tiempo real y muestra de los mismos.  
+	\end{itemize}
+	\item Procesamiento en lenguaje de nivel medio (Python)
+	\begin{itemize}
+	\item Verificación: se utilizará este lenguaje para programar el procesador. 
+	\item Validación: se informará la versión del lenguaje utilizado al cliente en la documentación.  
+	\end{itemize}
+	\item Tecnologías Rest para comunicación con los demás servicios.
+	\begin{itemize}
+	\item Verificación: pruebas en transmisión de datos por medio de http rest. 
+	\item Validación: pruebas reales en entorno de producción a modo de corroborar la actualización inmediata de datos.  
+	\end{itemize}
+	\end{enumerate}
+\item Grupo de requerimientos asociados con Aplicación Web
+	\begin{enumerate}
+	\item Registro de repuestos entrantes
+	\begin{itemize}
+	\item Verificación: simular entrada de registros por medio de todos los canales implicados. 
+	\item Validación: realizar registros reales en entorno de producción.  
+	\end{itemize}
+	\item Actualización inmediata de estados de procesos
+	\begin{itemize}
+	\item Verificación: análisis de demora en actualización de datos al realizar un registro nuevo. 
+	\item Validación: constatar la actualización inmediata de los datos en las interfaces correspondientes.  
+	\end{itemize}
+	\item ABM de clientes
+	\begin{itemize}
+	\item Verificación: ingreso de registros simulados para corroborar el funcionamiento de este módulo. 
+	\item Validación: ingresar de registros reales en entorno de producción y constatar su almacenamiento.
+	\end{itemize}
+	\item Búsqueda avanzada: por fecha, por cliente, por estado (para usuarios y administradores)
+	\begin{itemize}
+	\item Verificación: pruebas con distintos roles en las aplicaciones, ingresando datos de búsqueda. 
+	\item Validación: corroborar en entorno de producción con datos reales.  
+	\end{itemize}
+	\item Búsqueda de repuestos por id (para clientes) sin necesidad de acceso con usuario y contraseña.
+	\begin{itemize}
+	\item Verificación: corroborar las búsquedas desde navegadores en modo privado a fin de que no intervengan sesiones previas ni cookies.  
+	\item Validación: realizar pruebas con repuestos ingresados y verificar en cada cambio de estado.  
+	\end{itemize}
+	\item Roles: Usuario, Administrador, Cliente. Con nombre de usuario y contraseña excepto clientes.
+	\begin{itemize}
+	\item Verificación: pruebas de navegación con usuarios simulados de cada rol por todas las interfaces. Pruebas de acceso mediante url a secciones no autorizadas para ese rol. 
+	\item Validación: pruebas similares con los usuarios reales de la empresa.  
+	\end{itemize}
+	\item Diseño web adaptable (responsive design) y amigable.
+	\begin{itemize}
+	\item Verificación: acceso desde distintos dispositivos al sistema web. Pruebas con herramientas para simular diferentes pantallas.
+	\item Validación: acceso desde dispositivos varios en la empresa.  
+	\end{itemize}
+	\end{enumerate}
+\item Grupo de requerimientos asociados con Aplicación Móvil
+	\begin{enumerate}
+	\item Actualización inmediata de estados de procesos
+	\begin{itemize}
+	\item Verificación: acceso desde la aplicación web y verificación en cambios de proceso. Análisis del tiempo de demora.
+	\item Validación: corroborar el cambio de estado de procesos en aplicación móvil.  
+	\end{itemize}
+	\item Búsqueda avanzada: por fecha, por cliente, por estado (para usuarios y administradores)
+	\begin{itemize}
+	\item Verificación: pruebas con distintos usuarios en la aplicación, ingresando datos de búsqueda. 
+	\item Validación: corroborar en entorno de producción con datos reales desde distintos dispositivos.  
+	\end{itemize}
+	\item Búsqueda de repuestos por id (para clientes) sin necesidad de acceso con usuario y contraseña.
+	\begin{itemize}
+	\item Verificación: corroborar las búsquedas desde la aplicación ingresando con diferentes usuarios y desde varios dispositivos en simultáneo (al menos dos).  
+	\item Validación: realizar pruebas con repuestos ingresados y verificar en cada cambio de estado.  
+	\end{itemize}
+	\item Roles: Usuario, Administrador, Cliente. Con nombre de usuario y contraseña excepto clientes.
+	\begin{itemize}
+	\item Verificación: pruebas de acceso con usuarios simulados de cada rol por todas las secciones de la aplicación. 
+	\item Validación: pruebas similares con los usuarios reales de la empresa.  
+	\end{itemize}
+	\item Diseño amigable.
+	\begin{itemize}
+	\item Verificación: realizar pruebas con usuarios nuevos sin previa lectura de documentación. 
+	\item Validación: corroborar que la navegación por la aplicación sea intuitiva con usuarios nuevos.  
+	\end{itemize}
+	\end{enumerate}
+\end{enumerate}
 
 \end{consigna}
 
@@ -792,33 +893,26 @@ El plan de comunicación del proyecto es el siguiente:
 \multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}PLAN DE COMUNICACIÓN DEL PROYECTO}           \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 ¿Qué comunicar? & Audiencia & Propósito & Frecuencia & Método de comunicac. & Responsable \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
-                &           &           &            &                      &             \\ \hline
+ Desarrollo del servidor & Director y codirector&Informar avance&Cada 15 días&Email & Pablo Arancibia            \\ \hline
+Desarrollo de base de datos & Director y codirector&Corroborar buen diseño&Al finalizar la base de datos&Email &Pablo Arancibia \\ \hline
+Desarrollo de aplicación web & Director y codirector&Informar avances y corroborar buen diseño y funcionalidad &Cada 15 días &Email &Pablo Arancibia             \\ \hline
+Desarrollo de aplicación móvil & Director y codirector&Informar avances y corroborar buen diseño y funcionalidad &Cada 15 días &Email &Pablo Arancibia\\ \hline
+Implemen- tación & Director, codirector y cliente&Informar avances y buena implementación&Semanalmente&Email y presencial con el cliente  &Pablo Arancibia \\ \hline
+Documen- tación & Director, codirector y cliente &Informar finalización y entrega&Al finalizar la documentación&Email &Pablo Arancibia             \\ \hline
+Finalización del proyecto & Director, codirector, cliente  e interesados&Informar finalización del proyecto &Al finalizar el proyecto     &Email y presencial con el cliente e interesados  & Pablo Arancibia            \\ \hline
 \end{tabularx}
 \end{table}
 
 \section{15. Gestión de compras}
 \label{sec:compras}
 
-\begin{consigna}{red}
-En caso de tener que comprar elementos o contratar servicios:
-a) Explique con qué criterios elegiría a un proveedor.
-b) Redacte el Statement of Work correspondiente.
+\begin{consigna}{black}
+Todos los componentes detallados en el presupuesto de este documento pueden ser adquiridos por https://www.mercadolibre.com.ar 
 \end{consigna}
 
 \section{16. Seguimiento y control}
 \label{sec:seguimiento}
-
-\begin{consigna}{red}
-Para cada tarea del proyecto establecer la frecuencia y los indicadores con los se seguirá su avance y quién será el responsable de hacer dicho seguimiento y a quién debe comunicarse la situación (en concordancia con el Plan de Comunicación del proyecto).
-
-El indicador de avance tiene que ser algo medible, mejor incluso si se puede medir en \% de avance. Por ejemplo,se pueden indicar en esta columna cosas como ``cantidad de conexiones ruteadeas'' o ``cantidad de funciones implementadas'', pero no algo genérico y ambiguo como ``\%'', porque el lector no sabe porcentaje de qué cosa.
-
-\end{consigna}
-
+\begin{consigna}{black}
 \begin{longtable}{|m{1cm}|m{3.5cm}|m{2.2cm}|m{2cm}|m{3cm}|m{1.5cm}|}
 \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -839,45 +933,108 @@ Tarea del WBS 			& Indicador de avance & Frecuencia de reporte & Resp. de seguim
 
 \endlastfoot
 
-1.1	& Fecha de inicio  & Única vez al comienzo & \authorname & \clientename, \supname & email \\ \hline
-2.1	& Avance de las subtareas  & Mensual mientras dure la tarea & \authorname & \clientename, \supname & email \\ \hline
+1.1	& Información final obtenida  & Única vez al finalizar & \authorname & \supname y \cosupname & email \\ \hline
+1.2	&Información final obtenida  & Única vez al finalizar & \authorname & \supname y \cosupname & email \\ \hline
+1.3	& Información final obtenida  & Única vez al finalizar & \authorname & \supname y \cosupname & email \\ \hline
+1.4	&Información final obtenida  & Única vez al finalizar & \authorname & \supname y \cosupname & email \\ \hline
+2.1	& Información final obtenida  & Única vez al finalizar & \authorname & \supname y \cosupname & email \\ \hline
+2.2	& Información final obtenida & Única vez al finalizar & \authorname & \supname y \cosupname & email \\ \hline
+2.3	& Información final obtenida  & Única vez al finalizar & \authorname & \supname y \cosupname & email \\ \hline
+2.4	& Información final obtenida  & Única vez al finalizar & \authorname & \supname y \cosupname & email \\ \hline
+3.1	& Cada módulo nuevo realizado  & Semanal & \authorname & \supname y \cosupname & email \\ \hline
+3.2	& Cada función nueva realizada  & Semanal & \authorname & \supname y \cosupname & email \\ \hline
+3.3	& Cada función nueva realizada  & Semanal & \authorname & \supname y \cosupname & email \\ \hline
+3.4	& Cantidad de pruebas realizadas y sus resultados  & Semanal & \authorname & \supname y \cosupname & email \\ \hline
+3.5	& Implementación con cada componente  & Semanal & \authorname & \supname y \cosupname & email \\ \hline
+4.1	& Cantidad de tablas y sus relaciones diseñadas  & Única vez al finalizar & \authorname & \supname y \cosupname & email \\ \hline
+5.1	& Software instalado y en funcionamiento &Única vez al finalizar& \authorname & \supname y \cosupname & email \\ \hline
+5.2	& Cada interfaz realizada &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+5.3	& Cada interfaz realizada &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+5.4	& Cada interfaz realizada &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+5.5	& Cada interfaz realizada &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+5.6	& Software instalado y en funcionamiento&Única vez al finalizar& \authorname & \supname y \cosupname & email \\ \hline
+5.7	& Cada funcionalidad finalizada sobre cada interfaz &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+5.8	& Cada funcionalidad finalizada sobre cada interfaz &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+5.9	& Cada funcionalidad finalizada sobre cada interfaz &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+5.10	& Cada tabla de base de datos integrada al sistema&Única vez al finalizar& \authorname & \supname y \cosupname & email \\ \hline
+5.11	& Cada prueba realizada y su resultado&Semanal& \authorname & \supname y \cosupname & email \\ \hline
+
+6.1	& Software instalado y en funcionamiento &Única vez al finalizar& \authorname & \supname y \cosupname & email \\ \hline
+6.2	& Cada interfaz realizada &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+6.3	& Cada interfaz realizada &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+6.4	& Cada interfaz realizada &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+6.5	& Cada interfaz realizada &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+6.6	& Software instalado y en funcionamiento&Única vez al finalizar& \authorname & \supname y \cosupname & email \\ \hline
+6.7	& Cada funcionalidad finalizada sobre cada interfaz &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+6.8	& Cada tabla de base de datos integrada al sistema&Única vez al finalizar& \authorname & \supname y \cosupname & email \\ \hline
+6.9	& Cada prueba realizada y su resultado&Semanal& \authorname & \supname y \cosupname & email \\ \hline
+
+7.1	& Cada prueba realizada y su resultado&Semanal& \authorname & \supname y \cosupname & email \\ \hline
+7.2	& Cada componente instalado&Semanal y al finalizar& \authorname & \supname y \cosupname & email \\ \hline
+7.3	& Cada configuración realizada y su funcionalidad&Semanal& \authorname & \supname y \cosupname & email \\ \hline
+7.4	& Cada prueba realizada y su resultado&Semanal& \authorname & \supname y \cosupname & email \\ \hline
+7.5	& Cada módulo de capacitación realizado &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+7.6	& Cada módulo modificado &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+8.1	& Un capítulo por módulo de cada aplicación &Semanal& \authorname & \supname y \cosupname & email \\ \hline
+8.2	& Un cartel por estado de proceso &Única vez al finalizar& \authorname & \supname y \cosupname & email \\ \hline
+8.3	& Un capítulo por módulo de cada sistema incluyendo componentes &Semanal& \authorname & \supname y \cosupname & email \\ \hline
 
 \end{longtable}
-
-\begin{table}[!htpb]
-\centering
-%\begin{tabularx}{\linewidth}{@{}|X|X|X|X|X|X|@{}}
-\begin{tabularx}{\linewidth}{@{}|X|C{2.5cm}|C{3cm}|C{2cm}|C{2cm}|C{2.5cm}|@{}}
-\hline
-\rowcolor[HTML]{C0C0C0} 
-\multicolumn{6}{|c|}{\cellcolor[HTML]{C0C0C0}SEGUIMIENTO DE AVANCE}                                                                       \\ \hline
-\rowcolor[HTML]{C0C0C0} 
-Tarea del WBS & Indicador de avance & Frecuencia de reporte & Resp. de seguimiento & Persona a ser informada & Método de comunic. \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
- &  &  &  &  &  \\ \hline
-\end{tabularx}%
-%}
-\end{table}
-
-\section{17. Procesos de cierre}    
-\label{sec:cierre}
-
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
-
-\begin{itemize}
-\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
- - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-\item Identificación de las técnicas y procedimientos útiles e inútiles que se utilizaron, y los problemas que surgieron y cómo se solucionaron:
- - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-  - Indicar esto y quién financiará los gastos correspondientes.
-\end{itemize}
-
 \end{consigna}
 
 
+
+
+\section{17. Procesos de cierre}    
+\label{sec:cierre}
+\begin{consigna}{black}
+\begin{itemize}
+\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
+\begin{itemize}
+ \item Persona a cargo: \authorname. 
+ \end{itemize}
+ \begin{itemize}
+ \item Procedimiento: de acuerdo al plan de proyecto presentado.
+ \begin{itemize}
+  \item Cumplimiento de la fecha de finalización del proyecto.
+  \item Cumplimiento de los requerimientos solicitados.
+  \item Cumplimiento de las horas de trabajo planificadas.
+   \item Cumplimiento de los informes y la comunicación establecida.
+  \end{itemize}
+ \end{itemize}
+ 
+\item Identificación de las técnicas y procedimientos útiles e inútiles que se utilizaron, y los problemas que surgieron y cómo se solucionaron:
+
+ \begin{itemize}
+ \item Persona a cargo: \authorname. 
+ \end{itemize}
+ 
+ \begin{itemize}
+ \item Procedimiento: de acuerdo a los informes presentados y el seguimiento del proyecto.
+ \begin{itemize}
+  \item Análisis de informes presentados.
+  \item Estudio de la documentación del código fuente.
+  \item Realización de informe con resultados.
+  \end{itemize}
+ \end{itemize}
+ 
+ 
+ 
+ 
+\item Acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
+  
+ \begin{itemize}
+ \item Persona a cargo: \authorname. 
+ \end{itemize}
+ 
+ \begin{itemize}
+ \item Procedimiento: acto de cierre con miembros del equipo, el cliente y miembros de la empresa. 
+ 
+ 
+ 
+\end{itemize}
+
+\end{itemize}
+
+\end{consigna}
 \end{document}
