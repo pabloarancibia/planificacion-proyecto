@@ -15,10 +15,10 @@
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Mg. Ing. Diego Fernandez}
-\pertenenciaDirector{pertenencia} 
+\pertenenciaDirector{FIUBA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 \codirector{Ing. Miguel del Valle} % si queda vacio no se deberíá incluir 
-\pertenenciaCoDirector{}
+\pertenenciaCoDirector{IUA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Miguel Ángel Arancibia}
@@ -116,7 +116,7 @@ El personal que se encargue de realizar cada trabajo de reparación será quien,
 Cada lector enviará los datos actualizados al servidor, el cual almacenará el cambio de estado en una base de datos y realizará la actualización de la información en la aplicación web.
 Desde la app web/móvil se podrán visualizar todas las etapas del proceso, además los clientes podrán consultar el estado de su trabajo en tiempo real.
 
-De esta manera se podrá mantener informados a todos los miembros de la organización sobre cuales son los procesos que se están llevando a cabo en tiempo real, tener un historial de los mismos, base de datos de clientes, informes de cantidad de trabajos por periodo de tiempo determinado, clientes frecuentes, tipos de trabajos frecuentes, entre otros.
+De esta manera se podrán mantener informados a todos los miembros de la organización sobre cuales son los procesos que se están llevando a cabo en tiempo real, tener un historial de los mismos, base de datos de clientes, informes de cantidad de trabajos por periodo de tiempo determinado, clientes frecuentes, tipos de trabajos frecuentes, entre otros.
 Además cada cliente podrá consultar el estado de su trabajo, tener un historial de trabajos y recibir alertas automáticas por email o sms ante la finalización de un trabajo.
 
 Una de las ventajas principales de este sistema es la utilización de tarjetas RFID, ya que el trabajador no necesitará ingresar datos por medio de un teclado o pantalla sino que al pasar la tarjeta por cada lector este ya enviará la información correspondiente a ser actualizada.
@@ -180,7 +180,7 @@ Usuario final & --------------  &\empclientename &----------- \\ \hline
 %Por ejemplo:
 \begin{itemize}
 %\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-\item Colaborador: Se deberá contactar de manera online siempre ya que reside en otra provincia.
+\item Colaborador: se deberá contactar de manera online siempre ya que reside en otra provincia.
 %\item Orientador: María Gómez, nos va a poder ayudar mucho con la gestión de impuestos.
 \end{itemize}
 
@@ -255,7 +255,7 @@ Para el desarrollo del presente proyecto se supone que:
 	\item Almacenamiento de base de datos (MySql,MariaDB o PostgreSql)
 	\item Procesamiento en lenguaje de nivel medio (Python)
 	\item Tecnologías Rest para comunicación con los demás servicios.
-	\\\\ Prioridad del requerimiento: Alta.
+	\\\\ Prioridad del requerimiento: alta.
 	\end{enumerate}
 \item Grupo de requerimientos asociados con Aplicación Web
 	\begin{enumerate}
@@ -266,7 +266,7 @@ Para el desarrollo del presente proyecto se supone que:
 	\item Búsqueda de repuestos por id (para clientes) sin necesidad de acceso con usuario y contraseña.
 	\item Roles: Usuario, Administrador, Cliente. Con nombre de usuario y contraseña excepto clientes.
 	\item Diseño web adaptable (responsive design) y amigable.
-	\\\\ Prioridad del requerimiento: Alta.
+	\\\\ Prioridad del requerimiento: alta.
 	\end{enumerate}
 \item Grupo de requerimientos asociados con Aplicación Móvil
 	\begin{enumerate}
@@ -275,7 +275,7 @@ Para el desarrollo del presente proyecto se supone que:
 	\item Búsqueda de repuestos por id (para clientes) sin necesidad de acceso con usuario y contraseña.
 	\item Roles: Usuario, Administrador, Cliente. Con nombre de usuario y contraseña excepto clientes.
 	\item Diseño amigable.
-	\\\\ Prioridad del requerimiento: Media.
+	\\\\ Prioridad del requerimiento: media.
 	\end{enumerate}
 \end{enumerate}
 
@@ -349,7 +349,7 @@ Se entregarán:
 \item Investigación sobre hardware
 	\begin{enumerate}
 	\item Raspberry Pi: modelos, rendimiento, capacidades, etc. (6 hs)
-	\item Nodemcu: Modelos, rendimiento, conectividad, protocolos, etc.  (6 hs)
+	\item Nodemcu: modelos, rendimiento, conectividad, protocolos, etc.  (6 hs)
 	\item RFID: compatibilidad, componentes disponibles, MFRC522, otras. (6 hs)
 	\item Otros componentes: listado de componentes (6 hs)
 	\end{enumerate}
@@ -702,29 +702,29 @@ Referencias:
 a) Identificación de los riesgos y estimación de sus consecuencias:
  
 \begin{itemize}
-\item Severidad (S): mientras más severo, más alto es el número.\\
-\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número.\\
+\item Severidad (S): mientras más severo, más alto es el número. Rango: 0 a 10\\
+\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número. Rango: 0 a 10\\
 \end{itemize}   
 
-Riesgo 1: Bajo rendimiento del hardware seleccionado para el servidor.
+Riesgo 1: bajo rendimiento del hardware seleccionado para el servidor.
 \begin{itemize}
-\item Severidad (10): implicaría el retraso en los procesos de la organización, causando perdidas económicas y generando un mal servicio a los clientes.
+\item Severidad (10): implicaría el retraso en los procesos de la organización, causando pérdidas económicas y generando un mal servicio a los clientes.
 \item Ocurrencia (4): se ha investigado el hardware en cuestión y comparado su rendimiento con los requerimientos del sistema. El resultado fue favorable al rendimiento.
 \end{itemize}
 
-Riesgo 2: No cumplir con la fecha de entrega.
+Riesgo 2: no cumplir con la fecha de entrega.
 \begin{itemize}
 \item Severidad (8): implica retrasar la aprobación de la especialización y no cumplir con lo esperado por el cliente.
 \item Ocurrencia (3): dados los estudios realizados en este plan, se estima que existen escasas probabilidades de no cumplir con la fecha pactada. 
 \end{itemize}
 
-Riesgo 3: Fallas en la transmisión de datos entre componentes.
+Riesgo 3: fallas en la transmisión de datos entre componentes.
 \begin{itemize}
 \item Severidad (9): implicaría el mal funcionamiento de todo el sistema y la entrega de datos imprecisos a los usuarios y los clientes de la empresa.
 \item Ocurrencia (7): se estima que al utilizar comunicaciones inalámbricas pueden existir interferencias entre componentes.
 \end{itemize}
 
-Riesgo 4: Desinterés por parte del personal en la utilización de los servicios.
+Riesgo 4: desinterés por parte del personal en la utilización de los servicios.
 \begin{itemize}
 \item Severidad (10): implicaría el fracaso de este producto y una pérdida de inversión monetaria y de tiempo.
 \item Ocurrencia (2): en las entrevistas realizadas el personal se mostró muy interesado en el producto ya que conlleva una manera de trabajar más rápida y cómoda para todos ellos.
@@ -748,7 +748,7 @@ Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
  Riesgo 2: no cumplir con la fecha de entrega.  &8   &3   &24     &-    & -   & -     \\ \hline
  Riesgo 3: fallas en la transmisión de datos entre componentes. &9   &7   & 63    &6    &5    &30      \\ \hline
   Riesgo 4: desinterés por parte del personal en la utilización de los servicios.&10   &2   &20     &-    &  -  & -     \\ \hline
-   Riesgo 5: Incremento del costo de los componentes necesarios para el proyecto. &5   &10   &50     &2    &6    &12      \\ \hline
+   Riesgo 5: incremento del costo de los componentes necesarios para el proyecto. &5   &10   &50     &2    &6    &12      \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -767,17 +767,17 @@ c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo
 
 Riesgo 1: bajo rendimiento del hardware seleccionado para el servidor.
 
-- Severidad (6): debido a que el sistema consta de varios módulos, se podrá implementar algunos servicios por fuera de la placa raspberry, como ser la base de datos o el servidor web. Estos servicios pueden estar alojados en una de las PC de la organización o inclusive en la nube. De esta manera se minimizan los requerimientos de procesamiento a este componente.
+- Severidad (6): debido a que el sistema consta de varios módulos, se podrán implementar algunos servicios por fuera de la placa raspberry, como ser la base de datos o el servidor web. Estos servicios pueden estar alojados en una de las PC de la organización o inclusive en la nube. De esta manera se minimizan los requerimientos de procesamiento a este componente.
 
 - Probabilidad de ocurrencia (2): si se migran servicios de este componente disminuiría considerablemente la demanda de procesamiento.
 
 Riesgo 3: fallas en la transmisión de datos entre componentes.
  \\- Severidad (6): se implementará un lector adicional y la posibilidad de la entrada manual de datos en una interfaz para casos de contingencia.
- \\- Probabilidad de ocurrencia (5): Al tener canales alternativos se minimizan las posibilidades de quedarse sin comunicación con el servidor.
+ \\- Probabilidad de ocurrencia (5): al tener canales alternativos se minimizan las posibilidades de quedarse sin comunicación con el servidor.
  
 Riesgo 5: incremento del costo de los componentes necesarios para el proyecto.
 \\- Severidad (2): la mayoría de los componentes ya fueron adquiridos, para el resto de componentes se notificará inmediatamente al cliente la recomendación de realizar la compra.
- \\- Probabilidad de ocurrencia (6): Una vez que se adquieran todos los componentes no influiría el aumento en el mercado de los mismos ya que restaría sólo la compra de accesorios mínimos.
+ \\- Probabilidad de ocurrencia (6): una vez que se adquieran todos los componentes no influiría el aumento en el mercado de los mismos ya que restaría sólo la compra de accesorios mínimos.
 
 \end{consigna}
 
