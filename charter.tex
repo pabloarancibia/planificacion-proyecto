@@ -1,4 +1,5 @@
 \documentclass[11pt]{charter}
+\usepackage{colortbl}
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
 \titulo{Sistema de seguimiento de procesos en rectificadora de motopartes}
@@ -64,9 +65,10 @@
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 1.0      & Creación del documento                                          & 27/06/2020 \\ \hline
 1.1      & Entrega hasta punto 6                                           & 08/09/2020 \\ \hline
-1.2      & Entrega historias de usuario										& 15/09/2020    \\ \hline
-1.3	     & Entrega hasta punto 11										& 22/09/2020    \\ \hline
-1.4	     & Entrega hasta punto final										& 29/09/2020    \\ \hline
+1.3      & Entrega historias de usuario										& 15/09/2020    \\ \hline
+1.4	     & Entrega hasta punto 11										& 22/09/2020    \\ \hline
+1.5	     & Entrega hasta punto final										& 29/09/2020    \\ \hline
+1.6	     & Entrega correcciones finales								& 29/09/2020    \\ \hline
 %		   En varias líneas \newline
 %		   A propósito                                                     & dd/mm/aaaa \\ \hline
 \end{tabularx}
@@ -157,7 +159,7 @@ En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistem
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
 %Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
+Cliente       & \clientename      &\empclientename	& Dueño       	\\ \hline
 %Impulsor      &                   &              	&        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
 Colaboradores &  Miguel del Valle & Fuerza Aérea   	& Colaboración en hardware\\ \hline
@@ -744,11 +746,11 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
- Riesgo 1: bajo rendimiento del hardware seleccionado para el servidor. &10   &4   &40     &6    &2    &12      \\ \hline
- Riesgo 2: no cumplir con la fecha de entrega.  &8   &3   &24     &-    & -   & -     \\ \hline
- Riesgo 3: fallas en la transmisión de datos entre componentes. &9   &7   & 63    &6    &5    &30      \\ \hline
-  Riesgo 4: desinterés por parte del personal en la utilización de los servicios.&10   &2   &20     &-    &  -  & -     \\ \hline
-   Riesgo 5: incremento del costo de los componentes necesarios para el proyecto. &5   &10   &50     &2    &6    &12      \\ \hline
+ Riesgo 1: bajo rendimiento del hardware seleccionado para el servidor. &10   &4   &\cellcolor{red} 40    &6    &2    &\cellcolor{green}12      \\ \hline
+ Riesgo 2: no cumplir con la fecha de entrega.  &8   &3   &\cellcolor{green}24     &-    & -   & -     \\ \hline
+ Riesgo 3: fallas en la transmisión de datos entre componentes. &9   &7   &\cellcolor{red} 63    &6    &5    &\cellcolor{green}30      \\ \hline
+  Riesgo 4: desinterés por parte del personal en la utilización de los servicios.&10   &2   &\cellcolor{green}20     &-    &  -  & -     \\ \hline
+   Riesgo 5: incremento del costo de los componentes necesarios para el proyecto. &5   &10   &\cellcolor{red}50     &2    &6    &\cellcolor{green}12      \\ \hline
 \end{tabularx}
 \end{table}
 
